@@ -1,0 +1,70 @@
+import type { SiteConfig } from "@/lib/types";
+
+export const siteConfig: SiteConfig = {
+  brand: "ZENO",
+  brandSub: "BARBERSHOP",
+  phone: "+39 06 6549 9465",
+  phoneHref: "tel:+390665499465",
+  addressLines: [
+    "Via Orlando Ferrazza 31,",
+    "Genzano di Roma 00045, Italia",
+  ],
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Via+Orlando+Ferrazza+31+Genzano+di+Roma",
+  bookingUrl: "",
+  instagramUrl: "",
+  images: {
+    hero: "/assets/841140447_17881143063691756_7596866373779017901_n.webp",
+    exp1: "/assets/841640060_17881143048691756_2082397461179861780_n.webp",
+    exp2: "/assets/843434715_17881143003691756_6175050913702471483_n.webp",
+    s1: "/assets/844394528_17881142994691756_8194882639579483546_n.webp",
+    s2: "/assets/850353310_17881803942691756_4922202330957698094_n.webp",
+    s3: "/assets/870302374_17883977976691756_9174048520644460255_n.webp",
+    w1: "/assets/870322067_17883977967691756_8322312296768022210_n.webp",
+    w2: "/assets/841140447_17881143063691756_7596866373779017901_n.webp",
+    w3: "/assets/841640060_17881143048691756_2082397461179861780_n.webp",
+    w4: "/assets/843434715_17881143003691756_6175050913702471483_n.webp",
+    w5: "/assets/844394528_17881142994691756_8194882639579483546_n.webp",
+    w6: "/assets/850353310_17881803942691756_4922202330957698094_n.webp",
+    w7: "/assets/870302374_17883977976691756_9174048520644460255_n.webp",
+    book: "/assets/870322067_17883977967691756_8322312296768022210_n.webp",
+  },
+  navLinks: [
+    { href: "#metodo", labelKey: "metodo" },
+    { href: "#servizi", labelKey: "servizi" },
+    { href: "#gallery", labelKey: "gallery" },
+    { href: "#contatti", labelKey: "contatti" },
+  ],
+  services: [
+    {
+      id: "cut",
+      number: "01",
+      titleKey: "cut",
+      imageKey: "s1",
+      labelKey: "cutLabel",
+    },
+    {
+      id: "beard",
+      number: "02",
+      titleKey: "beard",
+      imageKey: "s2",
+      labelKey: "beardLabel",
+    },
+    {
+      id: "combo",
+      number: "03",
+      titleKey: "combo",
+      imageKey: "s3",
+      labelKey: "comboLabel",
+    },
+  ],
+  gallery: [
+    { id: "w1", imageKey: "w1", labelKey: "w1", className: "g1" },
+    { id: "w2", imageKey: "w2", labelKey: "w2", className: "g2" },
+    { id: "w3", imageKey: "w3", labelKey: "w3", className: "g3" },
+    { id: "w4", imageKey: "w4", labelKey: "w4", className: "g4" },
+    { id: "w5", imageKey: "w5", labelKey: "w5", className: "g5" },
+    { id: "w6", imageKey: "w6", labelKey: "w6", className: "g6" },
+    { id: "w7", imageKey: "w7", labelKey: "w7", className: "g7" },
+  ],
+};

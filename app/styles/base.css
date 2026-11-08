@@ -1,0 +1,493 @@
+:root {
+  --green: #20372e;
+  --gold: #c6b58e;
+  --stone: #a9a397;
+  --char: #171918;
+  --ivory: #eae5d9;
+  --sage: #526456;
+  --serif: var(--font-serif), "Iowan Old Style", Georgia, serif;
+  --sans: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px));
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--green);
+  color: var(--ivory);
+  font: 300 1rem / 1.6 var(--sans);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 4px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 300;
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+}
+
+.ph {
+  position: relative;
+  background: var(--sage);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.ph:not(.has)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0 22px,
+    rgba(234, 229, 217, 0.07) 22px 23px
+  );
+}
+
+.ph:not(.has)::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: rgba(234, 229, 217, 0.7);
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  color: var(--ivory);
+  padding: 0.95rem 1.7rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition:
+    background 0.35s,
+    color 0.35s;
+}
+
+.btn:hover {
+  background: var(--gold);
+  color: var(--green);
+}
+
+.btn.solid {
+  background: var(--gold);
+  color: var(--green);
+}
+
+.btn.solid:hover {
+  background: var(--ivory);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(1.1rem + env(safe-area-inset-top, 0px)) clamp(1.2rem, 4vw, 3.5rem)
+    1.1rem;
+  transition: background 0.4s;
+}
+
+nav.solid {
+  background: var(--green);
+}
+
+.logo {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  letter-spacing: 0.32em;
+  line-height: 1;
+}
+
+.logo small {
+  display: block;
+  font: 300 0.52rem var(--sans);
+  letter-spacing: 0.42em;
+  color: var(--gold);
+  margin-top: 0.3rem;
+}
+
+.links {
+  display: flex;
+  gap: 2.4rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+.links a {
+  position: relative;
+  padding: 0.3rem 0;
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s;
+}
+
+.links a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-cta {
+  padding: 0.7rem 1.3rem;
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: 0;
+  color: var(--ivory);
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
+
+.burger i {
+  display: block;
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+  margin: 7px 0 7px auto;
+  transition: transform 0.35s;
+}
+
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: var(--green);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 8vw;
+  gap: 1.2rem;
+  transform: translateY(-100%);
+  transition: transform 0.6s cubic-bezier(0.7, 0, 0.2, 1);
+  visibility: hidden;
+}
+
+.menu.open {
+  transform: none;
+  visibility: visible;
+}
+
+.menu a {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 11vw, 3.6rem);
+  font-weight: 300;
+}
+
+.menu .btn {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  position: relative;
+}
+
+.hero h1 {
+  text-transform: uppercase;
+}
+
+.hero h1 span {
+  display: block;
+  overflow: hidden;
+}
+
+.hero h1 span b {
+  display: block;
+  font-weight: 300;
+  transform: translateY(105%);
+  animation: up 1.2s cubic-bezier(0.2, 0.7, 0.1, 1) forwards;
+}
+
+.hero h1 span:nth-child(2) b {
+  animation-delay: 0.18s;
+  font-style: italic;
+  color: var(--gold);
+}
+
+@keyframes up {
+  to {
+    transform: none;
+  }
+}
+
+.hero p {
+  max-width: 30ch;
+  margin: 2rem 0 2.2rem;
+  color: rgba(234, 229, 217, 0.82);
+  font-size: 1.02rem;
+}
+
+.loc {
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  color: var(--ivory);
+}
+
+.exp {
+  background: var(--ivory);
+  color: var(--char);
+  padding: clamp(5rem, 12vw, 11rem) clamp(1.2rem, 4vw, 3.5rem);
+  position: relative;
+}
+
+.exp .big {
+  aspect-ratio: 4 / 5;
+  background: var(--stone);
+}
+
+.exp .small {
+  aspect-ratio: 1;
+  border: 10px solid var(--ivory);
+  z-index: 2;
+  background: var(--sage);
+}
+
+.exp h2 {
+  font-size: clamp(3rem, 6.4vw, 6.6rem);
+  position: relative;
+  z-index: 3;
+  color: var(--green);
+  text-transform: uppercase;
+}
+
+.exp p {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  line-height: 1.45;
+}
+
+.serv {
+  padding: clamp(5rem, 10vw, 9rem) clamp(1.2rem, 4vw, 3.5rem);
+}
+
+.serv h2 {
+  font-size: 1rem;
+  font-family: var(--sans);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 3rem;
+}
+
+.row {
+  display: grid;
+  align-items: baseline;
+  border-top: 1px solid rgba(198, 181, 142, 0.55);
+  padding: 2rem 0;
+  position: relative;
+  transition: padding 0.5s;
+}
+
+.row:last-of-type {
+  border-bottom: 1px solid rgba(198, 181, 142, 0.55);
+}
+
+.row .n {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--gold);
+  font-size: 1.3rem;
+}
+
+.row h3 {
+  font-size: clamp(2.2rem, 6.4vw, 6.2rem);
+  text-transform: uppercase;
+  transition:
+    transform 0.5s,
+    color 0.5s;
+}
+
+.work {
+  background: var(--stone);
+  color: var(--char);
+  padding: clamp(5rem, 10vw, 9rem) clamp(1.2rem, 4vw, 3.5rem);
+}
+
+.work h2 {
+  font-size: clamp(2.6rem, 7vw, 7rem);
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  max-width: 11ch;
+  color: var(--green);
+}
+
+.mosaic {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(0.7rem, 1.6vw, 1.5rem);
+}
+
+.mosaic .ph {
+  transition: clip-path 1.1s cubic-bezier(0.2, 0.7, 0.1, 1);
+  clip-path: inset(0 0 100% 0);
+}
+
+.mosaic .ph.in {
+  clip-path: inset(0);
+}
+
+.mosaic .ph:hover {
+  background-size: 108%;
+}
+
+.book {
+  display: grid;
+  min-height: 100vh;
+  background: var(--char);
+}
+
+.book .ph {
+  min-height: 60vh;
+}
+
+.book-in {
+  padding: clamp(3rem, 7vw, 7rem) clamp(1.5rem, 5vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.2rem;
+  background: var(--green);
+}
+
+.book h2 {
+  font-size: clamp(2.4rem, 4.6vw, 4.8rem);
+  text-transform: uppercase;
+}
+
+.book .sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+
+.facts {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(198, 181, 142, 0.5);
+}
+
+.facts div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid rgba(198, 181, 142, 0.5);
+}
+
+.facts dt {
+  color: var(--stone);
+  font-size: 0.82rem;
+  flex: 0 0 5.5rem;
+}
+
+.facts dd {
+  text-align: right;
+  margin: 0;
+}
+
+.facts a:hover {
+  color: var(--gold);
+}
+
+.acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+footer {
+  background: var(--green);
+  border-top: 1px solid rgba(198, 181, 142, 0.35);
+  padding: 2.5rem clamp(1.2rem, 4vw, 3.5rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 3rem;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: rgba(234, 229, 217, 0.8);
+}
+
+footer nav {
+  position: static;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+  background: none;
+}
+
+footer .c {
+  width: 100%;
+  font-size: 0.72rem;
+  color: var(--stone);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation-duration: 0.01s !important;
+    transition-duration: 0.01s !important;
+  }
+
+  .hero h1 span b {
+    transform: none;
+  }
+
+  .mosaic .ph {
+    clip-path: none;
+  }
+}

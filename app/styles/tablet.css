@@ -1,0 +1,59 @@
+/* Tablet / large phones in landscape */
+@media (min-width: 641px) and (max-width: 900px) {
+  .hero {
+    grid-template-rows: min(52svh, 520px) auto auto;
+  }
+
+  .hero-txt {
+    margin-top: -5rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 9vw, 4.6rem);
+  }
+
+  .exp .big {
+    width: min(78%, 560px);
+  }
+
+  .exp .small {
+    width: min(38%, 240px);
+    border-width: 10px;
+  }
+
+  .exp h2 {
+    font-size: clamp(3rem, 7vw, 4.8rem);
+  }
+
+  .row {
+    grid-template-columns: 3rem minmax(0, 1fr) auto;
+    column-gap: 1rem;
+    padding: 1.6rem 0;
+  }
+
+  .row h3 {
+    font-size: clamp(2rem, 5.5vw, 3.2rem);
+  }
+
+  .row .price {
+    font-size: 1.6rem;
+  }
+
+  .mosaic {
+    grid-auto-rows: clamp(36px, 5vw, 52px);
+    gap: 0.75rem;
+  }
+
+  .book-map {
+    min-height: min(48vh, 420px);
+  }
+
+  .acts .btn {
+    flex: 1 1 calc(50% - 0.85rem);
+  }
+
+  footer nav {
+    width: auto;
+  }
+}

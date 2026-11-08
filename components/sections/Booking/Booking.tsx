@@ -1,7 +1,7 @@
 "use client";
 
+import { LocationMap } from "@/components/sections/Booking/LocationMap";
 import { Button } from "@/components/ui/Button/Button";
-import { Placeholder } from "@/components/ui/Placeholder/Placeholder";
 import { useLocale } from "@/context/LocaleContext";
 import { siteConfig } from "@/data/site";
 
@@ -14,10 +14,7 @@ export const Booking = (): React.JSX.Element => {
 
   return (
     <section className="book" id="contatti">
-      <Placeholder
-        src={siteConfig.images.book}
-        label={t.booking.imageLabel}
-      />
+      <LocationMap />
       <div className="book-in">
         <h2>{t.booking.title}</h2>
         <p className="sub">{t.booking.subtitle}</p>

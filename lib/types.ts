@@ -11,6 +11,10 @@ export type ServiceItem = {
   titleKey: "cut" | "beard" | "combo";
   imageKey: "s1" | "s2" | "s3";
   labelKey: "cutLabel" | "beardLabel" | "comboLabel";
+  /** Mock price in EUR */
+  price: number;
+  /** Approximate duration in minutes */
+  durationMin: number;
 };
 
 export type GalleryItem = {
@@ -45,6 +49,10 @@ export type SiteConfig = {
   phoneHref: string;
   addressLines: string[];
   mapsUrl: string;
+  coordinates: {
+    lat: number;
+    lng: number;
+  };
   bookingUrl: string;
   instagramUrl: string;
   images: SiteImages;

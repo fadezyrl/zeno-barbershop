@@ -11,12 +11,16 @@ export const siteConfig: SiteConfig = {
   ],
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Via+Orlando+Ferrazza+31+Genzano+di+Roma",
+  coordinates: {
+    lat: 41.709088,
+    lng: 12.687642,
+  },
   bookingUrl: "",
   instagramUrl: "",
   images: {
     hero: "/assets/841140447_17881143063691756_7596866373779017901_n.webp",
     exp1: "/assets/841640060_17881143048691756_2082397461179861780_n.webp",
-    exp2: "/assets/843434715_17881143003691756_6175050913702471483_n.webp",
+    exp2: "/assets/850353310_17881803942691756_4922202330957698094_n.webp",
     s1: "/assets/844394528_17881142994691756_8194882639579483546_n.webp",
     s2: "/assets/850353310_17881803942691756_4922202330957698094_n.webp",
     s3: "/assets/870302374_17883977976691756_9174048520644460255_n.webp",
@@ -42,6 +46,8 @@ export const siteConfig: SiteConfig = {
       titleKey: "cut",
       imageKey: "s1",
       labelKey: "cutLabel",
+      price: 28,
+      durationMin: 45,
     },
     {
       id: "beard",
@@ -49,6 +55,8 @@ export const siteConfig: SiteConfig = {
       titleKey: "beard",
       imageKey: "s2",
       labelKey: "beardLabel",
+      price: 18,
+      durationMin: 30,
     },
     {
       id: "combo",
@@ -56,6 +64,8 @@ export const siteConfig: SiteConfig = {
       titleKey: "combo",
       imageKey: "s3",
       labelKey: "comboLabel",
+      price: 40,
+      durationMin: 70,
     },
   ],
   gallery: [

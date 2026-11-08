@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Figtree } from "next/font/google";
 
 import { LocaleProvider } from "@/context/LocaleContext";
@@ -24,6 +24,13 @@ const dictionary = getDictionary(defaultLocale);
 export const metadata: Metadata = {
   title: dictionary.meta.title,
   description: dictionary.meta.description,
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#20372E",
 };
 
 export default function RootLayout({

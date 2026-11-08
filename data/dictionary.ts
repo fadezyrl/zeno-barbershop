@@ -38,6 +38,8 @@ type Dictionary = {
     cutLabel: string;
     beardLabel: string;
     comboLabel: string;
+    duration: string;
+    priceNote: string;
   };
   gallery: {
     title: string;
@@ -57,7 +59,8 @@ type Dictionary = {
     cta: string;
     maps: string;
     instagram: string;
-    imageLabel: string;
+    mapLabel: string;
+    mapAttribution: string;
   };
   footer: {
     location: string;
@@ -104,6 +107,8 @@ const it: Dictionary = {
     cutLabel: "Taglio",
     beardLabel: "Barba",
     comboLabel: "Taglio + barba",
+    duration: "{min} min",
+    priceNote: "Prezzi indicativi",
   },
   gallery: {
     title: "Il nostro lavoro",
@@ -123,7 +128,8 @@ const it: Dictionary = {
     cta: "Prenota un appuntamento",
     maps: "Apri in Google Maps",
     instagram: "Instagram",
-    imageLabel: "Fotografia: interno Zeno",
+    mapLabel: "Mappa: Zeno Barbershop, Via Orlando Ferrazza 31, Genzano di Roma",
+    mapAttribution: "© OpenStreetMap",
   },
   footer: {
     location: "Genzano di Roma, Italia",
@@ -170,6 +176,8 @@ const en: Dictionary = {
     cutLabel: "Cut",
     beardLabel: "Beard",
     comboLabel: "Cut + beard",
+    duration: "{min} min",
+    priceNote: "Indicative prices",
   },
   gallery: {
     title: "Our work",
@@ -189,7 +197,8 @@ const en: Dictionary = {
     cta: "Book an appointment",
     maps: "Open in Google Maps",
     instagram: "Instagram",
-    imageLabel: "Photo: Zeno interior",
+    mapLabel: "Map: Zeno Barbershop, Via Orlando Ferrazza 31, Genzano di Roma",
+    mapAttribution: "© OpenStreetMap",
   },
   footer: {
     location: "Genzano di Roma, Italy",

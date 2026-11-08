@@ -1,12 +1,15 @@
 /* Tablet / large phones in landscape */
 @media (min-width: 641px) and (max-width: 900px) {
   .hero {
-    grid-template-rows: min(52svh, 520px) auto auto;
+    grid-template-rows: minmax(0, 1fr) auto auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
   }
 
   .hero-txt {
     margin-top: -5rem;
-    padding-bottom: 3rem;
+    padding-bottom: 2.25rem;
   }
 
   .hero h1 {
